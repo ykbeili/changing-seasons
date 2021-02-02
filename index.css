@@ -1,70 +1,83 @@
+*{
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+}
 body {
-  background: black;
+  background-image: url(1.jpg);
+ -webkit-background-size:cover;
+ background-size: cover;
+ background-position: center center;
+ height: 100vh;
 }
-.name {
-    color: white;
-    font-size: 40px;
-    font-style: oblique;
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: grey;
+  min-height: 8vh;
+font-family: 'poppins',sans-serif;
 }
-.about{
-  color:white;
-}
-.input{
-  float: right;
-}
-.input2{
-  float: right;
+.logo {
+  color: black;
+letter-spacing: 5px;
 }
 
-ul {
-  position: -webkit-sticky;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgba(89, 96, 107,2);
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
 }
-li {
-   border-right: 1px solid black;
-  float: left;
+.nav-links li{
+  list-style: none;
 }
-li a {
-  display: white;
-  color: white;
-  text-align: center;
-  padding: 12px 16px;
-  font-size: 25px;
+.nav-links a{
+  color: black;
+  font-size: 12px;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  font-weight: bold;
   text-decoration: none;
 }
-li a:hover {
-  background-color: grey;
-}
-.Products{
-  position: fixed;
-  display: inline-block;
-}
-.Products-content {
-  display: none;
-  font-size: 23px;
-  position: absolute;
-  background-color: grey;
-  min-widthredpx;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 10px 16px;
-  z-index: 1;
-}
-.Products-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
+.lines{
   display: block;
-  text-align: left;
+cursor: pointer;
 }
-.Products-content a:hover {background-color: red;}
-
-.Products:hover .Products-content {
-  display: inline-grid;
+.lines div{
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 3px;
 }
-img {
-  width: 100%;
+@media screen and (max-width:1024px){
+  .nav-links{
+    width: 60%;
+  }
+}
+@media screen and (max-width:768px){
+  body{
+    overflow-x: hidden;
+  }
+  .nav-links{
+    position:absolute;
+    right:0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+.nav-links li{
+  opacity: 0;
+}
+.lines {
+  display: block;
+}
+}
+.nav-active{
+  transform: translateX(0%);
 }
